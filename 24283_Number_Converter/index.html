@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Converter</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h2>Number Converter</h2>
+        <form id="numberForm">
+            Enter a number (base 10):
+            <input type="text" id="numberInput" name="number">
+            <br><br>
+            <input type="button" id="binaryBtn" value="Convert to Binary">
+            <input type="button" id="hexadecimalBtn" value="Convert to Hexadecimal">
+            <input type="button" id="octalBtn" value="Convert to Octal">
+            <input type="button" id="clearBtn" value="Clear">
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById("binaryBtn").addEventListener("click", function() {
+            convertNumber("binary");
+        });
+
+        document.getElementById("hexadecimalBtn").addEventListener("click", function() {
+            convertNumber("hexadecimal");
+        });
+
+        document.getElementById("octalBtn").addEventListener("click", function() {
+            convertNumber("octal");
+        });
+
+        document.getElementById("clearBtn").addEventListener("click", function() {
+            document.getElementById("numberInput").value = "";
+            document.getElementById("result").innerHTML = "";
+        });
+
+        function convertNumber(type) {
+            var number = document.getElementById("numberInput").value;
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("result").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.open("POST", "ConvertNumberServlet", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.send("number=" + number + "&" + type + "=true");
+        }
+    </script>
+</body>
+</html>
