@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Admission - Response</title>
+    <link rel="stylesheet" href="response.css">
+</head>
+<body>
+    <header>
+        <h1>Student Admission - Response</h1>
+    </header>
+    <main>
+        <div id="response">
+            <!-- Response content will be dynamically added here -->
+        </div>
+        <a href="index.html">Go Back Home</a>
+    </main>
+
+    <script>
+        // Function to fetch response content from servlet
+        function fetchResponseContent() {
+            // Assuming you're using XMLHttpRequest to fetch the response content
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        // If request is successful, insert response content into the page
+                        document.getElementById("response").innerHTML = xhr.responseText;
+                    } else {
+                        // If request fails, display an error message
+                        document.getElementById("response").innerHTML = "<p>Error fetching response content</p>";
+                    }
+                }
+            };
+            xhr.open("POST", "AdmissionServlet", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            // Assuming you're sending form data as parameters (e.g., formData)
+            xhr.send(formData);
+        }
+
+        // Call the fetchResponseContent function when the page loads
+        document.addEventListener("DOMContentLoaded", fetchResponseContent);
+    </script>
+</body>
+</html>

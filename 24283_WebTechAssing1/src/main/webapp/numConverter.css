@@ -1,0 +1,73 @@
+@charset "ISO-8859-1";
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+h2 {
+    text-align: center;
+    color: #343a40;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-right: 10px; /* Add spacing between input and buttons */
+    font-size: 16px;
+}
+
+input[type="button"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 5px; /* Add spacing between buttons */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+input[type="button"] {
+    background-color: #8a2be2; /* Purple */
+    color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+input[type="button"]:hover {
+    background-color: #6a1b9a; /* Darker purple */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+#result {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#result h3 {
+    color: #343a40;
+}
+
+#result p {
+    color: #6c757d;
+    margin: 10px 0;
+}

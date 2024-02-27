@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <servlet>
+        <servlet-name>ConvertNumberServlet</servlet-name>
+        <servlet-class>com.numberConverter.ConvertNumberServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ConvertNumberServlet</servlet-name>
+        <url-pattern>/ConvertNumberServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    <servlet-name>AdmissionServlet</servlet-name>
+    <servlet-class>com.studentAdmission.AdmissionServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>AdmissionServlet</servlet-name>
+    <url-pattern>/response.html</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+    <servlet-name>AuthenticationServlet</servlet-name>
+    <servlet-class>com.studentAdmission.AuthenticationServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>AuthenticationServlet</servlet-name>
+    <url-pattern>/authentication</url-pattern>
+</servlet-mapping>
+</web-app>
